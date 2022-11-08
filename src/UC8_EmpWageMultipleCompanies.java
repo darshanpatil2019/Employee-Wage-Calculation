@@ -39,9 +39,8 @@ public class UC8_EmpWageMultipleCompanies {
     }
 
     public static void main(String[] args) {
-
-        calculateEmpWage("Wipro", 300, 20, 30);
-        calculateEmpWage("Accenture", 500, 25, 40);
+        calculateEmpWage("Accenture", 300, 24, 90);
+        calculateEmpWage("Wipro", 200, 21, 100);
     }
 }
 
