@@ -19,7 +19,7 @@ public class CompanyEmpWage {
     public void setTotalEmpWage(int totalEmpWage) {
         this.totalEmpWage = totalEmpWage;
     }
-    //Override the toString() from String Class
+    //Override toString() from String Class
 
     public String toString() {
         return "Total Employee Wage for Company : " + companyName + "is :" + totalEmpWage;
