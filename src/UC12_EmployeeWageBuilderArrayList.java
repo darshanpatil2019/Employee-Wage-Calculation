@@ -1,24 +1,25 @@
-public class UC11_EmployeeWageBuilderArray implements EmployeeWage {
+import java.util.ArrayList;
 
+public class UC12_EmployeeWageBuilderArrayList implements EmployeeWage {
     // Constants for Class
 
     private int noOfCompanies = 0;
-    private CompanyEmpWage[] companyEmpWages;
+   //Array List for Company Wage Object
+   static ArrayList<CompanyEmpWage> CompanyEmpWages;
 
-    public void UC11_EmployeeWageBuilderArray() {
-        companyEmpWages = new CompanyEmpWage[5];
+
+    public static void UC12_EmployeeWageBuilderArrayList() {
+        CompanyEmpWages = new ArrayList<>();
     }
 
-    private void addCompanyEmpWages(String companyName, int wagePerHr, int numWorkingDays, int maxHrsPerMonth) {
-        companyEmpWages[noOfCompanies] = new CompanyEmpWage(companyName, wagePerHr, numWorkingDays, maxHrsPerMonth);
-        noOfCompanies++;
-        return;
+    private static void addCompanyEmpWages(String companyName, int wagePerHr, int numWorkingDays, int maxHrsPerMonth) {
+        CompanyEmpWages.add(new CompanyEmpWage(companyName, wagePerHr, numWorkingDays, maxHrsPerMonth));
     }
 
     public void calculateEmpWage() {
-        for (int i = 0; i < noOfCompanies; i++) {
-            companyEmpWages[i].setTotalEmpWage(calculateEmpWage(companyEmpWages[i]));
-            System.out.println(companyEmpWages[i].toString());
+        for (CompanyEmpWage companyEmpWage : CompanyEmpWages) {
+            companyEmpWage.setTotalEmpWage(this.calculateEmpWage(companyEmpWage));
+            System.out.println(companyEmpWage.toString());
         }
     }
 
@@ -55,10 +56,11 @@ public class UC11_EmployeeWageBuilderArray implements EmployeeWage {
     }
 
     public static void main(String[] args) {
-        UC11_EmployeeWageBuilderArray UC11_EmployeeWageBuilderArray = new UC11_EmployeeWageBuilderArray();
-        UC11_EmployeeWageBuilderArray.addCompanyEmpWages("Accenture", 200, 24, 100);
-        UC11_EmployeeWageBuilderArray.addCompanyEmpWages("Wipro", 300, 26, 150);
-        UC11_EmployeeWageBuilderArray.calculateEmpWage();
+        UC12_EmployeeWageBuilderArrayList uc12_employeeWageBuilderArrayList= new UC12_EmployeeWageBuilderArrayList();
+        UC12_EmployeeWageBuilderArrayList.addCompanyEmpWages("Accenture", 200, 24, 100);
+        UC12_EmployeeWageBuilderArrayList.addCompanyEmpWages("Wipro", 300, 26, 150);
+        UC12_EmployeeWageBuilderArrayList.addCompanyEmpWages("INFOSYS",500,28,250);
+        UC12_EmployeeWageBuilderArrayList.calculateEmpWage();
     }
 }
 
