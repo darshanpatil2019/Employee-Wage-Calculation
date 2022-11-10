@@ -6,5 +6,6 @@ public interface EmployeeWage {
     //Methods for Calculating Employee Wages
     public void calculateEmpWage();
 
+
     public int calculateEmpWage(CompanyEmpWage companyEmpWage);
 }
